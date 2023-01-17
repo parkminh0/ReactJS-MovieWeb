@@ -15,11 +15,10 @@ function Detail(){
     useEffect(() => {
         getMovie();
     }, []);
-    console.log(movie);
     return (
         <div>{loading ? <h1>"Loading..."</h1> : (
             <div>
-                <img src="https://yts.mx/assets/images/movies/dreamland_a_storming_area_51_story_2022/medium-cover.jpg"/>
+                <img src={movie.medium_cover_image} alt={movie.id}/>
                 <h3>{movie.title} ({movie.year})</h3>
                 <hr/>
                 <h4>Runtime: {movie.runtime} min</h4>
