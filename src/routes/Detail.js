@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import React from 'react';
 
 function Detail(){
     const [loading, setLoading] = useState(true);
@@ -25,7 +26,7 @@ function Detail(){
                 <h4>Rating: {movie.rating}/10</h4>
                 <h4>Genre</h4>
                 {movie.genres.map((items) => (
-                    <li>{items}</li>
+                    <li key={items}>{items}</li>
                 ))}
             </div>
         )}

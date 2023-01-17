@@ -19,21 +19,24 @@ function Home(){
     }, []);
 
     return (
-        <div>{loading ? <h1>Loading...</h1> : (
-            <div>
-                {movies.map((items) => (
-                <Movie 
-                    coverImg={items.medium_cover_image}
-                    id={items.id}
-                    title={items.title}
-                    summary={items.summary}
-                    genres={items.genres}
-                />
-                ))}
-            </div>
+        <div>
+            {loading ? <span>Loading...</span>
+            : (
+                <div>
+                    {movies.map((items) => (
+                        <Movie 
+                            coverImg={items.medium_cover_image}
+                            id={items.id}
+                            key={items.id}
+                            title={items.title}
+                            summary={items.summary}
+                            genres={items.genres}
+                        />
+                    ))}
+                </div>
             )}
         </div>
-    );
+    )
 };
 
 export default Home;
